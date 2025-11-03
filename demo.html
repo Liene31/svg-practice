@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Click to Spin SVG</title>
+    <style>
+      svg {
+        width: 100px;
+        height: 100px;
+        cursor: pointer;
+      }
+      .spin {
+        transform-origin: 30px 30px; /* center of rotation */
+        animation: spin 2s linear infinite;
+      }
+
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <svg id="mySvg" viewBox="0 0 60 60" role="img" aria-label="click to spin">
+      <rect id="square" x="20" y="20" width="20" height="20" fill="royalblue" />
+    </svg>
+
+    <script>
+      const rect = document.getElementById("square");
+      rect.addEventListener("click", () => {
+        rect.classList.toggle("spin"); // toggle spin on click
+      });
+    </script>
+  </body>
+</html>
